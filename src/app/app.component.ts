@@ -20,3 +20,17 @@ export class MyApp {
     });
   }
 }
+    // OneSignal Code start:
+    // Enable to debug issues:
+    // window["plugins"].OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
+
+    var notificationOpenedCallback = function(jsonData) {
+      alert('notificationOpenedCallback: ' + JSON.stringify(jsonData));
+    };
+
+    window["plugins"].OneSignal
+      .startInit("f027983f-d08e-4d7a-8a6d-e5349e3d38e6", "842362947014")
+      .handleNotificationOpened(notificationOpenedCallback)
+      .endInit();
+  });
+}
